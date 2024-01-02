@@ -1,0 +1,13 @@
+stm32h750xb\croutine.o: ..\FreeRTOS-Kernel\croutine.c
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/FreeRTOS.h
+stm32h750xb\croutine.o: D:\software_work\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+stm32h750xb\croutine.o: D:\software_work\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/FreeRTOSConfig.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/projdefs.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/portable.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/deprecated_definitions.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/portable/RVDS/ARM_CM7/r0p1/portmacro.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/mpu_wrappers.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/task.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/list.h
+stm32h750xb\croutine.o: ../FreeRTOS-Kernel/include/croutine.h
