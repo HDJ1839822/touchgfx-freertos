@@ -58,9 +58,12 @@ void SysTick_Handler(void);
 void EXTI4_IRQHandler(void);
 void DMA1_Stream2_IRQHandler(void);
 void DMA1_Stream4_IRQHandler(void);
+void FMC_IRQHandler(void);
 void TIM5_IRQHandler(void);
 void UART4_IRQHandler(void);
 void LTDC_IRQHandler(void);
+void LTDC_ER_IRQHandler(void);
+void DMA2D_IRQHandler(void);
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */

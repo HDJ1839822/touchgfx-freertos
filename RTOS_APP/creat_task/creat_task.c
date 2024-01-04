@@ -60,7 +60,7 @@
   
     taskENTER_CRITICAL();           //进入临界区
 		
-//		hardware_init();
+		hardware_init();
   
     /* 创建LedTask任务 */
     xReturn = xTaskCreate((TaskFunction_t )LedTask, /* 任务入口函数 */

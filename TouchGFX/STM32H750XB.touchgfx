@@ -1,0 +1,128 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "screen",
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "ImageProgress",
+            "Name": "imageProgress1",
+            "Width": 800,
+            "Height": 480,
+            "FileNameProgress": "__generated\\alternate_theme_images_widgets_imageprogress_plain_normal_small_active.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_backgrounds_800x480_puzzle.png",
+            "IndicatorPositionX": 800,
+            "IndicatorPositionWidth": 800,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
+          },
+          {
+            "Type": "AnalogClock",
+            "Name": "analogClock1",
+            "X": 280,
+            "Y": 120,
+            "Width": 240,
+            "Height": 240,
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_analogclock_backgrounds_small_plain_dark.png",
+            "RotationCenterX": 120,
+            "RotationCenterY": 120,
+            "Preset": "alternate_theme\\presets\\analogclock\\small_plain_dark.json",
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "ClockHands": [
+              {
+                "Type": "HourClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_hour_plain_dark.png",
+                "RotationCenterX": 9,
+                "RotationCenterY": 69
+              },
+              {
+                "Type": "MinuteClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_minute_plain_dark.png",
+                "RotationCenterX": 10,
+                "RotationCenterY": 87
+              },
+              {
+                "Type": "SecondClockHand",
+                "FileNameHandImage": "__generated\\alternate_theme_images_widgets_analogclock_hands_small_second_plain_dark.png",
+                "RotationCenterX": 2,
+                "RotationCenterY": 100
+              }
+            ],
+            "InitialHour": 10,
+            "InitialMinute": 10
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "screen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H750 Value line",
+    "Toolchain": "MDK-ARM V5.27",
+    "Platform": "m7",
+    "ProjectFile": "../STM32H750XB.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.22.0"
+}

@@ -6,8 +6,8 @@
 #include "gpio.h"
 #include "stdio.h"
 #include "shell.h"
-
-
+#include "app_config.h"
+#include "app_touchgfx.h"
 
 
 
@@ -39,12 +39,27 @@
 	{
 	  while(1)
 		{
-		  
-	    
-		  vTaskDelay(1);   /* 延时500个tick */
+//		test_cjson_send();
+//	    test_cjson_receive();
+//			
+  MX_TouchGFX_Process();
+//		  vTaskDelay(1000);   /* 延时500个tick */
 		}
 
 	}
+	
+	
+	/*
+	  led task
+	  display task
+	
+	  shell task
+	  touch task
+	  irda task
+	  adc task
+	  uart process task
+	  usb task
+*/
 	
 	
 			

@@ -55,6 +55,8 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern DMA2D_HandleTypeDef hdma2d;
+extern SDRAM_HandleTypeDef hsdram1;
 extern LTDC_HandleTypeDef hltdc;
 extern TIM_HandleTypeDef htim5;
 extern DMA_HandleTypeDef hdma_uart4_rx;
@@ -145,15 +147,15 @@ void UsageFault_Handler(void)
 /**
   * @brief This function handles System service call via SWI instruction.
   */
-//void SVC_Handler(void)
-//{
-//  /* USER CODE BEGIN SVCall_IRQn 0 */
+void SVC_Handler(void)
+{
+  /* USER CODE BEGIN SVCall_IRQn 0 */
 
-//  /* USER CODE END SVCall_IRQn 0 */
-//  /* USER CODE BEGIN SVCall_IRQn 1 */
+  /* USER CODE END SVCall_IRQn 0 */
+  /* USER CODE BEGIN SVCall_IRQn 1 */
 
-//  /* USER CODE END SVCall_IRQn 1 */
-//}
+  /* USER CODE END SVCall_IRQn 1 */
+}
 
 /**
   * @brief This function handles Debug monitor.
@@ -171,29 +173,29 @@ void DebugMon_Handler(void)
 /**
   * @brief This function handles Pendable request for system service.
   */
-//void PendSV_Handler(void)
-//{
-//  /* USER CODE BEGIN PendSV_IRQn 0 */
+void PendSV_Handler(void)
+{
+  /* USER CODE BEGIN PendSV_IRQn 0 */
 
-//  /* USER CODE END PendSV_IRQn 0 */
-//  /* USER CODE BEGIN PendSV_IRQn 1 */
+  /* USER CODE END PendSV_IRQn 0 */
+  /* USER CODE BEGIN PendSV_IRQn 1 */
 
-//  /* USER CODE END PendSV_IRQn 1 */
-//}
+  /* USER CODE END PendSV_IRQn 1 */
+}
 
 /**
   * @brief This function handles System tick timer.
   */
-//void SysTick_Handler(void)
-//{
-//  /* USER CODE BEGIN SysTick_IRQn 0 */
+void SysTick_Handler(void)
+{
+  /* USER CODE BEGIN SysTick_IRQn 0 */
 
-//  /* USER CODE END SysTick_IRQn 0 */
-//  HAL_IncTick();
-//  /* USER CODE BEGIN SysTick_IRQn 1 */
+  /* USER CODE END SysTick_IRQn 0 */
+  HAL_IncTick();
+  /* USER CODE BEGIN SysTick_IRQn 1 */
 
-//  /* USER CODE END SysTick_IRQn 1 */
-//}
+  /* USER CODE END SysTick_IRQn 1 */
+}
 
 /******************************************************************************/
 /* STM32H7xx Peripheral Interrupt Handlers                                    */
@@ -245,6 +247,20 @@ void DMA1_Stream4_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles FMC global interrupt.
+  */
+void FMC_IRQHandler(void)
+{
+  /* USER CODE BEGIN FMC_IRQn 0 */
+
+  /* USER CODE END FMC_IRQn 0 */
+  HAL_SDRAM_IRQHandler(&hsdram1);
+  /* USER CODE BEGIN FMC_IRQn 1 */
+
+  /* USER CODE END FMC_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM5 global interrupt.
   */
 void TIM5_IRQHandler(void)
@@ -284,6 +300,34 @@ void LTDC_IRQHandler(void)
   /* USER CODE BEGIN LTDC_IRQn 1 */
 
   /* USER CODE END LTDC_IRQn 1 */
+}
+
+/**
+  * @brief This function handles LTDC global error interrupt.
+  */
+void LTDC_ER_IRQHandler(void)
+{
+  /* USER CODE BEGIN LTDC_ER_IRQn 0 */
+
+  /* USER CODE END LTDC_ER_IRQn 0 */
+  HAL_LTDC_IRQHandler(&hltdc);
+  /* USER CODE BEGIN LTDC_ER_IRQn 1 */
+
+  /* USER CODE END LTDC_ER_IRQn 1 */
+}
+
+/**
+  * @brief This function handles DMA2D global interrupt.
+  */
+void DMA2D_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA2D_IRQn 0 */
+
+  /* USER CODE END DMA2D_IRQn 0 */
+  HAL_DMA2D_IRQHandler(&hdma2d);
+  /* USER CODE BEGIN DMA2D_IRQn 1 */
+
+  /* USER CODE END DMA2D_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

@@ -1,0 +1,30 @@
+
+{
+  "Application": {
+    "Name": "STM32H750XB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "AvailableColorDepths": [ 16 ],
+    "AvailableLCDs":
+    {
+      "16": "LCD16bpp"
+    },
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H750 Value line",
+    "Platform": "m7",
+    "Toolchain": "MDK-ARM V5.27",
+    "ProjectFile": "../STM32H750XB.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [
+    ],
+    "AdditionalFeatures": [
+    ]
+  },
+  "Version": "4.22.0"
+}

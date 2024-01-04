@@ -22,7 +22,7 @@
 #include "fmc.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "bsp_sdram.h"
 /* USER CODE END 0 */
 
 SDRAM_HandleTypeDef hsdram1;
@@ -52,16 +52,16 @@ void MX_FMC_Init(void)
   hsdram1.Init.CASLatency = FMC_SDRAM_CAS_LATENCY_2;
   hsdram1.Init.WriteProtection = FMC_SDRAM_WRITE_PROTECTION_DISABLE;
   hsdram1.Init.SDClockPeriod = FMC_SDRAM_CLOCK_PERIOD_2;
-  hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_DISABLE;
+  hsdram1.Init.ReadBurst = FMC_SDRAM_RBURST_ENABLE;
   hsdram1.Init.ReadPipeDelay = FMC_SDRAM_RPIPE_DELAY_0;
   /* SdramTiming */
-  SdramTiming.LoadToActiveDelay = 16;
-  SdramTiming.ExitSelfRefreshDelay = 16;
-  SdramTiming.SelfRefreshTime = 16;
-  SdramTiming.RowCycleDelay = 16;
+  SdramTiming.LoadToActiveDelay = 2;
+  SdramTiming.ExitSelfRefreshDelay = 8;
+  SdramTiming.SelfRefreshTime = 6;
+  SdramTiming.RowCycleDelay = 6;
   SdramTiming.WriteRecoveryTime = 16;
-  SdramTiming.RPDelay = 16;
-  SdramTiming.RCDDelay = 16;
+  SdramTiming.RPDelay = 2;
+  SdramTiming.RCDDelay = 2;
 
   if (HAL_SDRAM_Init(&hsdram1, &SdramTiming) != HAL_OK)
   {
@@ -69,7 +69,7 @@ void MX_FMC_Init(void)
   }
 
   /* USER CODE BEGIN FMC_Init 2 */
-
+ 
   /* USER CODE END FMC_Init 2 */
 }
 
@@ -189,6 +189,9 @@ static void HAL_FMC_MspInit(void){
 
   HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
+  /* Peripheral interrupt init */
+  HAL_NVIC_SetPriority(FMC_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(FMC_IRQn);
   /* USER CODE BEGIN FMC_MspInit 1 */
 
   /* USER CODE END FMC_MspInit 1 */
@@ -277,6 +280,8 @@ static void HAL_FMC_MspDeInit(void){
 
   HAL_GPIO_DeInit(GPIOH, GPIO_PIN_5);
 
+  /* Peripheral interrupt DeInit */
+  HAL_NVIC_DisableIRQ(FMC_IRQn);
   /* USER CODE BEGIN FMC_MspDeInit 1 */
 
   /* USER CODE END FMC_MspDeInit 1 */
